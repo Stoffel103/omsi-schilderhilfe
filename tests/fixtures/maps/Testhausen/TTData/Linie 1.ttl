@@ -1,0 +1,52 @@
+Linie 1 (Test)
+
+[userallowed]
+
+[priority]
+1
+
+[newtour]
+1
+Testhausen
+
+------------------------------------
+
+[addtrip]
+Einsetzer Betriebshof - Bahnhof
+0
+290.000
+
+[addtrip]
+Linie 1 Bahnhof - Markt
+0
+300.000
+
+[addtrip]
+Linie 1 Markt - Bahnhof
+0
+315.500
+
+[addtrip]
+Linie 1 Bahnhof - Grüner Weg
+0
+330.000
+
+[newtour]
+2
+Testhausen
+543
+
+[addtrip]
+Linie 1 Bahnhof - Markt
+0
+1430.000
+
+[addtrip]
+Linie 1 Markt - Bahnhof
+0
+1445.000
+
+[addtrip]
+Gibt es nicht
+0
+1460.000

@@ -1,0 +1,12 @@
+{
+  "name": "omsi-schilderhilfe",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zeigt für jeden Umlauf einer OMSI-2-Karte, was man ins IBIS eingeben muss (Linie, Route, Ziel).",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "start": "npx --yes http-server -c-1 -p 8080 ."
+  },
+  "license": "MIT"
+}

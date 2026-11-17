@@ -1,0 +1,4 @@
+tests/fixtures/** -text
+*.hof -text
+*.ttl -text
+*.ttp -text

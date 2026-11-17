@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMSI Schilderhilfe</title>
+  <meta name="description" content="Zeigt für jeden Umlauf einer OMSI-2-Karte Linie, Route und Ziel fürs IBIS.">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <div class="brand">
+        <img src="assets/icon.svg" alt="" width="36" height="36">
+        <div>
+          <h1 data-i18n="title">OMSI Schilderhilfe</h1>
+          <p class="tagline" data-i18n="tagline"></p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button type="button" class="ghost" id="lang-toggle" aria-label="Sprache / Language">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- 1. Dateien laden -->
+    <section id="drop" class="drop" tabindex="0">
+      <div class="drop-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="40" height="40"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 10v6m-3-3 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2 data-i18n="dropTitle"></h2>
+      <p class="muted" data-i18n="dropHint"></p>
+      <div class="drop-actions">
+        <label class="btn primary">
+          <input type="file" id="pick-folder" webkitdirectory directory multiple hidden>
+          <span data-i18n="pickFolder"></span>
+        </label>
+        <label class="btn">
+          <input type="file" id="pick-files" multiple accept=".hof,.ttl,.ttp,.cfg" hidden>
+          <span data-i18n="pickFiles"></span>
+        </label>
+        <button type="button" class="btn link" id="demo" data-i18n="tryDemo"></button>
+      </div>
+      <p class="progress" id="progress" hidden></p>
+    </section>
+
+    <!-- 2. Karte und Hof -->
+    <section id="status" class="status" hidden>
+      <div class="status-row">
+        <label class="field" id="map-field" hidden><span data-i18n="map"></span><select id="map-select"></select></label>
+        <label class="field" id="hof-field"><span data-i18n="hofFile"></span><select id="hof-select"></select></label>
+        <p class="summary" id="summary"></p>
+      </div>
+      <p class="notice" id="notice" hidden></p>
+    </section>
+
+    <!-- 3. Ansichten -->
+    <section id="views" hidden>
+      <nav class="tabs" role="tablist">
+        <button type="button" role="tab" data-tab="tours" aria-selected="true" data-i18n="tabTours"></button>
+        <button type="button" role="tab" data-tab="find" aria-selected="false" data-i18n="tabFind"></button>
+        <button type="button" role="tab" data-tab="codes" aria-selected="false" data-i18n="tabCodes"></button>
+      </nav>
+
+      <div class="panel" data-panel="tours">
+        <div class="filters">
+          <input type="search" id="tour-search" data-i18n-ph="searchTour">
+          <select id="tour-day"></select>
+          <select id="tour-school"></select>
+        </div>
+        <div class="split">
+          <ul class="tour-list" id="tour-list"></ul>
+          <div class="tour-detail" id="tour-detail"></div>
+        </div>
+      </div>
+
+      <div class="panel" data-panel="find" hidden>
+        <p class="muted" data-i18n="findHint"></p>
+        <div class="filters">
+          <label class="field"><span data-i18n="findTime"></span><input type="time" id="find-time"></label>
+          <label class="field grow"><span data-i18n="findStop"></span><input type="search" id="find-stop" list="stop-list"></label>
+          <label class="field"><span data-i18n="findTolerance"></span><input type="number" id="find-tol" min="0" max="120" value="5"></label>
+          <label class="field"><span data-i18n="day"></span><select id="find-day"></select></label>
+        </div>
+        <datalist id="stop-list"></datalist>
+        <div id="find-results"></div>
+      </div>
+
+      <div class="panel" data-panel="codes" hidden>
+        <div class="filters">
+          <input type="search" id="code-search" data-i18n-ph="searchCodes">
+        </div>
+        <div id="code-results"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p data-i18n="footer"></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+Testdatei der OMSI Schilderhilfe (frei erfunden).				
+
+[name]			
+Testhausen			
+
+[servicetrip]
+Betriebsfahrt
+
+stringcount_terminus
+6
+
+[addterminus_list]		
+{ALLEX}	0	Leerfeld	LEERFELD					
+{ALLEX}	1	Betriebsfahrt	BETRIEBSFAHRT	Betriebsfahrt				
+	101	Markt	MARKT	Markt				
+	102	Bahnhof	BAHNHOF	Bahnhof				
+	20102	Bahnhof	BAHNHOF	*L[SB1]				
+	103	Grüner Weg	GRÜNER WEG	Grüner Weg				
+
+[infosystem_trip]		
+101
+1_BF_MKT
+101
+1
+
+[infosystem_busstop_list]
+3
+Bahnhof
+Rathaus
+Markt
+
+[infosystem_trip]
+102
+1_MKT_BF
+102
+1
+
+[infosystem_busstop_list]
+3
+Markt
+Rathaus
+Bahnhof
+
+[infosystem_trip]
+103
+1_BF_GW
+103
+1
+
+[infosystem_busstop_list]
+4
+Bahnhof
+Rathaus
+Markt
+Grüner Weg
+
+[infosystem_trip]
+9901
+B_DEPOT_BF
+1
+99
+
+[infosystem_busstop_list]
+2
+Betriebshof
+Bahnhof
+
+[end]
